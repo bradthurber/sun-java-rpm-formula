@@ -18,6 +18,7 @@ install-jdk-rpm:
     - require:
       - file: {{ java.prefix }}
   pkg.installed:
-    - sources: sunjavarpm: /tmp/{{ java.file_name }}
+    - sources:
+      - sunjavajdk: /tmp/{{ java.file_name }}
 
 {%- endif %}
