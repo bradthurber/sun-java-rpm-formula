@@ -1,8 +1,14 @@
 ========
-sun-java
+sun-java-rpm
 ========
 
-Formula to set up and configure Java JREs and JDKs from a tarball archive sourced via URL.
+Formula to install Java JDKs from an RPM sourced via URL.
+
+This is a quick-and-dirty copy of the salt sun-java formula but 
+instead of downloading and installing a tarball, we just download
+and install an RPM
+
+Ideally, this should be retrofitted into the original sun-java formula at some point maybe?
 
 .. note::
 
@@ -15,16 +21,11 @@ Available states
 .. contents::
     :local:
 
-``sun-java``
+``sun-java-rpm``
 ------------
 
 Downloads the tarball from the java:source_url configured as either a pillar or grain and will not do anything
 if source_url is omitted. Then unpacks the archive into java:prefix (defaults to /usr/share/java).
 Will use the alternatives system to link the installation to java_home. Please see the pillar.example for configuration.
 
-``sun-java.env``
-----------------
-
-An addition to allow easy use - places a java profile in /etc/profile.d - this way JAVA_HOME and the PATH are set correctly for all system users.
-
-Tested on RedHat/CentOS 5.X or RedHat/CentOS 6.X, AmazonOS and Ubuntu.
+Tested on CentOS 6.X 
