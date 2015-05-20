@@ -12,10 +12,12 @@
 
 install-jdk-rpm:
   cmd.run:
-    - name: curl {{ java.dl_opts }} '{{ java.source_url }}' | rpm -ivh
+    - name: curl {{ java.dl_opts }} '{{ java.source_url }}' -o /tmp/{{ java.file_name }}
     - cwd: {{ java.prefix }}
     - unless: test -d {{ java.java_real_home }}
     - require:
       - file: {{ java.prefix }}
+  pkg.installed:
+    - sources: sunjavarpm: /tmp/{{ java.file_name }}
 
 {%- endif %}
