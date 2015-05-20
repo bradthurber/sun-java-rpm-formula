@@ -4,7 +4,7 @@ sun-java-rpm
 
 Formula to install Java JDKs from an RPM sourced via URL.
 
-This is a quick-and-dirty copy of the salt sun-java formula but 
+This is a quick-and-dirty copy of the salt sun-java-formula but 
 instead of downloading and installing a tarball, we just download
 and install an RPM
 
