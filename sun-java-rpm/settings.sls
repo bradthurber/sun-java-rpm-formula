@@ -1,7 +1,7 @@
 {% set p  = salt['pillar.get']('java', {}) %}
 {% set g  = salt['grains.get']('java', {}) %}
 
-{%- set java_home      = salt['grains.get']('java_home', salt['pillar.get']('java_home', '/usr/lib/java')) %}
+{%- set java_home            = salt['grains.get']('java_home', salt['pillar.get']('java_home', '/usr/lib/java')) %}
 
 {%- set default_version_name = 'jdk1.8.0_45' %}
 {%- set default_file_name    = 'jdk-8u45-linux-x64.rpm' %}
